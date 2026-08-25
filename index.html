@@ -1,16 +1,93 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Aula 1 – Tailwind</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Prática Tailwind - Dia 2 [Atividade 6]</title>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body class="bg-gray-100 flex items-center justify-center min-h-screen">
-    <!-- O card será inserido aqui pelos alunos -->
-</body>
+<body class="bg-gray-100">
 
+  <section class="max-w-7xl mx-auto px-4 py-10">
+
+    <h1 class="text-3xl font-bold text-green-800 mb-8">Notícias</h1>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+      <!-- Card 1 -->
+      <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition duration-300 flex flex-col">
+        <img src="premio.jpg" alt="Premiação" class="w-full h-48 object-cover">
+
+        <div class="p-5 flex flex-col flex-1 space-y-2">
+          <span class="inline-block text-xs font-semibold px-3 py-1 rounded-full bg-green-100 text-green-800">
+            Prêmio
+          </span>
+
+          <h2 class="text-xl font-bold text-green-800">
+            IFRN tem projetos entre os vencedores do Prêmio IEL 2026
+          </h2>
+
+          <p class="text-gray-700 text-sm flex-1">
+            Instituto conquistou destaque com projetos de educação inovadora.
+          </p>
+
+          <p class="text-gray-500 text-xs mt-2">
+            Há 20 horas
+          </p>
+        </div>
+      </div>
+
+
+      <!-- Card 2 -->
+      <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition duration-300 flex flex-col">
+        <img src="pesquisa.jpg" alt="Pesquisa" class="w-full h-48 object-cover">
+
+        <div class="p-5 flex flex-col flex-1 space-y-2">
+          <span class="inline-block text-xs font-semibold px-3 py-1 rounded-full bg-green-100 text-green-800">
+            Pesquisa
+          </span>
+
+          <h2 class="text-xl font-bold text-green-800">
+            Pesquisa desenvolvida no IFRN ganha destaque nacional
+          </h2>
+
+          <p class="text-gray-700 text-sm flex-1">
+            Projeto desenvolvido por estudantes apresenta resultados importantes para a área.
+          </p>
+
+          <p class="text-gray-500 text-xs mt-2">
+            Há 1 dia
+          </p>
+        </div>
+      </div>
+
+
+      <!-- Card 3 -->
+      <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition duration-300 flex flex-col">
+        <img src="intercambio.jpg" alt="Intercâmbio" class="w-full h-48 object-cover">
+
+        <div class="p-5 flex flex-col flex-1 space-y-2">
+          <span class="inline-block text-xs font-semibold px-3 py-1 rounded-full bg-green-100 text-green-800">
+            Internacionalização
+          </span>
+
+          <h2 class="text-xl font-bold text-green-800">
+            Estudantes participam de programa de intercâmbio
+          </h2>
+
+          <p class="text-gray-700 text-sm flex-1">
+            Alunos do instituto terão a oportunidade de conhecer novas culturas e experiências acadêmicas.
+          </p>
+
+          <p class="text-gray-500 text-xs mt-2">
+            Há 2 dias
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</body>
 </html>
