@@ -4,13 +4,196 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Aula 1 – Tailwind</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Desafio – Notícias IFRN</title>
+
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
 
-<body class="bg-gray-100 flex items-center justify-center min-h-screen">
-    <!-- O card será inserido aqui pelos alunos -->
+<body class="bg-white text-gray-900">
+
+    <section class="max-w-7xl mx-auto px-4 py-10">
+
+        <header class="mb-9 flex items-center justify-between gap-4">
+            <h2 class="text-4xl font-extrabold text-green-900">
+                Notícias
+            </h2>
+
+            <a href="#" class="inline-flex items-center gap-2 border border-green-700 text-green-800
+                               rounded-full px-5 py-2 text-sm font-semibold hover:bg-green-700
+                               hover:text-white transition">
+                Todas as notícias
+                <span aria-hidden="true" class="text-xl">›</span>
+            </a>
+        </header>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-7 gap-y-12">
+
+            <!-- Notícia 1 -->
+            <article class="group">
+                <div class="overflow-hidden rounded-2xl bg-gray-200">
+                    <img
+                        src="https://picsum.photos/seed/reuniao/500/300"
+                        alt="Reunião"
+                        class="w-full h-56 object-cover transition duration-200 group-hover:scale-105"
+                    />
+                </div>
+                <div class="pt-4">
+                    <span class="text-sm text-gray-500">Reunião</span>
+                    <h3 class="text-lg font-medium text-green-800 mt-1 leading-snug">
+                        Gestão e representação sindical dialogam sobre demandas dos servidores
+                    </h3>
+                    <p class="text-sm text-gray-700 mt-3 leading-relaxed">
+                        Encontros realizados em agosto abordaram temas relacionados ao PGD,
+                        prioridades legais, readaptação e banco de horas.
+                    </p>
+                    <time datetime="2026-08-31T10:00" class="text-xs text-gray-500 mt-4 block">
+                        Há 1 hora, 3 minutos
+                    </time>
+                </div>
+            </article>
+
+            <!-- Notícia 2 -->
+            <article class="group">
+                <div class="overflow-hidden rounded-2xl bg-gray-200">
+                    <img
+                        src="https://picsum.photos/seed/cultura/500/300"
+                        alt="Arte e Cultura"
+                        class="w-full h-56 object-cover transition duration-200 group-hover:scale-105"
+                    />
+                </div>
+                <div class="pt-4">
+                    <span class="text-sm text-gray-500">Arte e Cultura</span>
+                    <h3 class="text-lg font-medium text-green-800 mt-1 leading-snug">
+                        Intercâmbio entre museus de brinquedos populares tem programação gratuita em Natal
+                    </h3>
+                    <p class="text-sm text-gray-700 mt-3 leading-relaxed">
+                        Atividades acontecem nesta sexta-feira (28) e sábado (29), no Centro
+                        de Tecnologia e Cultura do IFRN
+                    </p>
+                    <time datetime="2026-08-27T14:00" class="text-xs text-gray-500 mt-4 block">
+                        Há 4 dias
+                    </time>
+                </div>
+            </article>
+
+            <!-- Notícia 3 -->
+            <article class="group">
+                <div class="overflow-hidden rounded-2xl bg-gray-200">
+                    <img
+                        src="https://picsum.photos/seed/intercampi/500/300"
+                        alt="Jogos Intercampi"
+                        class="w-full h-56 object-cover transition duration-200 group-hover:scale-105"
+                    />
+                </div>
+                <div class="pt-4">
+                    <span class="text-sm text-gray-500">Jogos Intercampi Estudantis 2026</span>
+                    <h3 class="text-lg font-medium text-green-800 mt-1 leading-snug">
+                        Intercampi chega ao fim com definição das últimas medalhas
+                    </h3>
+                    <p class="text-sm text-gray-700 mt-3 leading-relaxed">
+                        Resultados de sexta-feira e sábado encerraram a fase final estadual
+                    </p>
+                    <time datetime="2026-08-31T09:00" class="text-xs text-gray-500 mt-4 block">
+                        Há 1 hora, 45 minutos
+                    </time>
+                </div>
+            </article>
+
+            <!-- Notícia 4 -->
+            <article class="group">
+                <div class="overflow-hidden rounded-2xl bg-gray-200">
+                    <img
+                        src="https://picsum.photos/seed/alinhamento/500/300"
+                        alt="Alinhamento"
+                        class="w-full h-56 object-cover transition duration-200 group-hover:scale-105"
+                    />
+                </div>
+                <div class="pt-4">
+                    <span class="text-sm text-gray-500">Alinhamento</span>
+                    <h3 class="text-lg font-medium text-green-800 mt-1 leading-snug">
+                        Comissão de docentes realiza encontro presencial com capacitação
+                    </h3>
+                    <p class="text-sm text-gray-700 mt-3 leading-relaxed">
+                        Programação reúne integrantes para discutir o regimento interno e
+                        aprofundar conhecimentos sobre processos relacionados à carreira docente.
+                    </p>
+                    <time datetime="2026-08-27T15:00" class="text-xs text-gray-500 mt-4 block">
+                        Há 4 dias, 1 hora
+                    </time>
+                </div>
+            </article>
+
+            <!-- Notícia 5 - sem imagem -->
+            <article class="bg-white rounded-2xl shadow-sm p-6 border border-gray-100 transition duration-300 hover:-translate-y-1 hover:shadow-md hover:border-green-200 cursor-pointer">
+                <span class="text-sm text-gray-500">Campus Santa Cruz</span>
+                <h3 class="text-lg font-medium text-green-800 mt-2 leading-snug">
+                    IFRN sediou eventos sobre acessibilidade e inclusão na educação
+                </h3>
+                <p class="text-sm text-gray-700 mt-3 leading-relaxed">
+                    Programação ocorreu entre os dias 26 e 28 de agosto, no Campus Santa Cruz
+                </p>
+                <time datetime="2026-08-30T08:00" class="text-xs text-gray-500 mt-6 block">
+                    Há 20 horas
+                </time>
+            </article>
+
+            <!-- Notícia 6 - sem imagem -->
+            <article class="bg-white rounded-2xl shadow-sm p-6 border border-gray-100 transition duration-300 hover:-translate-y-1 hover:shadow-md hover:border-green-200 cursor-pointer">
+                <span class="text-sm text-gray-500">Intercampi 2026</span>
+                <h3 class="text-lg font-medium text-green-800 mt-2 leading-snug">
+                    Judô estreia e futebol define classificados nos Jogos Intercampi
+                </h3>
+                <p class="text-sm text-gray-700 mt-3 leading-relaxed">
+                    Quinta-feira reúne estreia da modalidade e rodadas que encaminham
+                    as semifinais da fase final
+                </p>
+                <time datetime="2026-08-27T16:00" class="text-xs text-gray-500 mt-6 block">
+                    Há 4 dias, 16 horas
+                </time>
+            </article>
+
+            <!-- Notícia 7 - sem imagem -->
+            <article class="bg-white rounded-2xl shadow-sm p-6 border border-gray-100 transition duration-300 hover:-translate-y-1 hover:shadow-md hover:border-green-200 cursor-pointer">
+                <span class="text-sm text-gray-500">Evento</span>
+                <h3 class="text-lg font-medium text-green-800 mt-2 leading-snug">
+                    III Encontro de Assessores de Projetos de Ensino reúne representantes dos 22 Campi na Reitoria
+                </h3>
+                <p class="text-sm text-gray-700 mt-3 leading-relaxed">
+                    O evento promoveu formação, troca de experiências e discussões sobre
+                    a regulamentação e o acompanhamento dos Projetos de Ensino no Instituto.
+                </p>
+                <time datetime="2026-08-28T10:00" class="text-xs text-gray-500 mt-6 block">
+                    Há 3 dias, 22 horas
+                </time>
+            </article>
+
+            <!-- Notícia 8 - sem imagem -->
+            <article class="bg-white rounded-2xl shadow-sm p-6 border border-gray-100 transition duration-300 hover:-translate-y-1 hover:shadow-md hover:border-green-200 cursor-pointer">
+                <span class="text-sm text-gray-500">JEE 2026</span>
+                <h3 class="text-lg font-medium text-green-800 mt-2 leading-snug">
+                    Novas modalidades ampliam programação dos Jogos Intercampi nesta quarta-feira
+                </h3>
+                <p class="text-sm text-gray-700 mt-3 leading-relaxed">
+                    Segundo dia da fase final teve provas individuais, disputas coletivas
+                    e continuidade das rodadas classificatórias
+                </p>
+                <time datetime="2026-08-26T18:00" class="text-xs text-gray-500 mt-6 block">
+                    Há 5 dias, 12 horas
+                </time>
+            </article>
+
+        </div>
+
+    </section>
+
+    <footer class="border-t border-gray-200 bg-white mt-8">
+        <div class="max-w-7xl mx-auto px-4 py-8 flex flex-col sm:flex-row
+                    items-center justify-between gap-3 text-sm text-gray-500">
+            <p>&copy; 2026 IFRN — Instituto Federal do Rio Grande do Norte</p>
+            <p>Portal de Notícias</p>
+        </div>
+    </footer>
+
 </body>
 
 </html>
