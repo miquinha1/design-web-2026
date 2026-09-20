@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hierarquia Visual</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 min-h-screen flex items-center justify-center">
+
+    <header class="max-w-sm rounded shadow p-4 bg-white border">
+        <h1 class="text-4xl font-black text-gray-800">
+            Desenvolvimento <span class="text-amber-500">Web</span>
+        </h1>
+
+        <h2 class="text-xl font-bold text-gray-600 mt-2">
+            Aprenda a criar páginas modernas
+        </h2>
+
+        <p class="text-sm font-light text-gray-500 mt-3">
+            Explore diferentes escalas de texto, pesos de fonte e cores
+            para criar uma <span class="text-amber-500 font-bold">hierarquia visual</span>
+            mais organizada e agradável.
+        </p>
+    </header>
+
+</body>
+</html>
