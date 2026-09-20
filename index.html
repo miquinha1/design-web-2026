@@ -1,127 +1,227 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
-
+<html lang="pt-BR" data-theme="light">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Atividade 10 – Seção de Eventos</title>
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <link rel="stylesheet" href="https://unpkg.com/phosphor-icons@latest/src/css/phosphor.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Micaías Cruz | Portfólio</title>
+
+  <!-- DaisyUI + Tailwind via CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@5/themes.css" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
 
-<body>
+<body class="min-h-screen bg-base-200 text-base-content">
+  <!-- NAVBAR -->
+  <header class="navbar bg-base-100 shadow-sm px-4 md:px-8 sticky top-0 z-50">
+    <div class="navbar-start">
+      <a href="#inicio" class="btn btn-ghost text-xl">Micaías Cruz</a>
+    </div>
 
-    <!-- ===========  Eventos  ================= -->
-    <section>
-        <div>
-            <!-- Cabeçalho da seção -->
-            <div>
-                <h2>Eventos</h2>
-                <a href="/eventos/">
-                    Todos os eventos
-                    <span aria-hidden="true"></span>
-                </a>
-                <div>
-                    <p>Conheça todos os eventos - atividades, festivais, congressos, palestras e outros - que englobam
-                        os <i>campi</i> do IFRN em diferentes escalas de alcance social.</p>
-                </div>
-            </div>
+    <div class="navbar-center hidden md:flex">
+      <ul class="menu menu-horizontal px-1">
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#projetos">Projetos</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+    </div>
 
-            <!-- Grade de cards de eventos -->
-            <div>
+    <div class="navbar-end gap-2">
+      <label class="swap swap-rotate btn btn-ghost btn-circle" aria-label="Alternar tema">
+        <input
+          type="checkbox"
+          class="theme-controller"
+          value="dark"
+        />
 
-                <a href="/eventos/9486/">
-                    <span>Em breve</span>
-                    <span title="Campus"><span aria-hidden="true"></span> Pau dos Ferros</span>
-                    <h3>Vivências em Arte</h3>
-                    <div>
-                        <span>07</span>
-                        <span>dez</span>
-                        <span>2026</span>
-                    </div>
-                </a>
+        <svg
+          class="swap-off h-6 w-6 fill-current"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24">
+          <path d="M5.64 17.66A9 9 0 1 1 18.36 4.94 7 7 0 0 0 5.64 17.66Z"/>
+        </svg>
 
-                <a href="/eventos/9595/">
-                    <span>Em breve</span>
-                    <span title="Campus"><span aria-hidden="true"></span> Caicó</span>
-                    <h3>III Feira Seridó Ciência</h3>
-                    <div>
-                        <span>25</span>
-                        <span>nov</span>
-                        <span>2026</span>
-                    </div>
-                </a>
+        <svg
+          class="swap-on h-6 w-6 fill-current"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24">
+          <path d="M12 4V2m0 20v-2m8-8h2M2 12h2m14.36-5.64 1.42-1.42M4.22 19.78l1.42-1.42m12.72 1.42-1.42-1.42M4.22 4.22l1.42 1.42M12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10Z"/>
+        </svg>
+      </label>
 
-                <a href="/eventos/9783/">
-                    <span>Em breve</span>
-                    <span title="Campus"><span aria-hidden="true"></span> João Câmara</span>
-                    <h3>CPOP 2026 - Competição de Pontes de Palito de Picolé do IFRN João Câmara</h3>
-                    <div>
-                        <span>04</span>
-                        <span>nov</span>
-                        <span>2026</span>
-                    </div>
-                </a>
+      <a href="#contato" class="btn btn-primary">Fale comigo</a>
+    </div>
+  </header>
 
-                <a href="/eventos/9333/">
-                    <span>Em breve</span>
-                    <span title="Campus"><span aria-hidden="true"></span> Reitoria</span>
-                    <h3>III Encontro Anual da Comissão Própria de Avaliação</h3>
-                    <div>
-                        <span>04</span>
-                        <span>nov</span>
-                        <span>2026</span>
-                    </div>
-                </a>
+  <main>
+    <!-- HERO / CABEÇALHO PRINCIPAL -->
+    <section id="inicio" class="hero min-h-[72vh] bg-base-100">
+      <div class="hero-content flex-col-reverse gap-10 py-16 lg:flex-row lg:gap-16">
+        <div class="max-w-2xl text-center lg:text-left">
+          <div class="badge badge-primary badge-outline mb-4">Desenvolvedor Front-end</div>
 
-                <a href="/eventos/9739/">
-                    <span>Em andamento</span>
-                    <span title="Campus"><span aria-hidden="true"></span> Pau dos Ferros</span>
-                    <h3>Oficina "Dando cores ao sol"</h3>
-                    <div>
-                        <span>14</span>
-                        <span>set</span>
-                        <span>2026</span>
-                    </div>
-                </a>
+          <h1 class="text-4xl font-bold leading-tight sm:text-5xl lg:text-6xl">
+            Olá, eu sou Micaías Cruz.
+          </h1>
 
-                <a href="/eventos/9764/">
-                    <span>Em andamento</span>
-                    <span title="Campus"><span aria-hidden="true"></span> São Gonçalo do Amarante</span>
-                    <h3>IFJURIS: Introdução ao Direito Constitucional</h3>
-                    <div>
-                        <span>14</span>
-                        <span>set</span>
-                        <span>2026</span>
-                    </div>
-                </a>
+          <p class="py-6 text-lg opacity-80">
+            Sou estudante de Informática para Internet e gosto de criar interfaces
+            modernas, responsivas e simples de usar.
+          </p>
 
-                <a href="/eventos/9714/">
-                    <span>Em andamento</span>
-                    <span title="Campus"><span aria-hidden="true"></span> Reitoria</span>
-                    <h3>ASTEEAD Conecta: gestão, monitoramento e apoio à EaD no IFRN</h3>
-                    <div>
-                        <span>14</span>
-                        <span>set</span>
-                        <span>2026</span>
-                    </div>
-                </a>
-
-                <a href="/eventos/9711/">
-                    <span>Em andamento</span>
-                    <span title="Campus"><span aria-hidden="true"></span> Currais Novos</span>
-                    <h3>Produção e exposição de Sala Temática: Abelha e Mel.</h3>
-                    <div>
-                        <span>14</span>
-                        <span>set</span>
-                        <span>2026</span>
-                    </div>
-                </a>
-
-            </div>
+          <div class="flex flex-wrap justify-center gap-3 lg:justify-start">
+            <a href="#projetos" class="btn btn-primary">Ver projetos</a>
+            <a href="#sobre" class="btn btn-outline">Sobre mim</a>
+          </div>
         </div>
+
+        <div class="avatar">
+          <div class="w-40 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2 sm:w-52">
+            <img src="micaias.jpg" alt="Foto de Micaías Cruz" />
+          </div>
+        </div>
+      </div>
     </section>
 
-</body>
+    <!-- APRESENTAÇÃO -->
+    <section id="sobre" class="mx-auto max-w-6xl px-4 py-20">
+      <div class="grid gap-10 md:grid-cols-2 md:items-center">
+        <div>
+          <p class="text-sm font-semibold uppercase tracking-widest text-primary">Sobre mim</p>
+          <h2 class="mt-2 text-3xl font-bold sm:text-4xl">
+            Tecnologia, design e desenvolvimento web.
+          </h2>
+        </div>
 
+        <div>
+          <p class="mb-5 text-lg leading-relaxed opacity-80">
+            Tenho interesse em desenvolvimento front-end e gosto de transformar ideias
+            em páginas organizadas e agradáveis de usar. Atualmente estudo HTML, CSS,
+            JavaScript, Tailwind CSS e React.
+          </p>
+
+          <div class="flex flex-wrap gap-2">
+            <span class="badge badge-primary">HTML</span>
+            <span class="badge badge-secondary">CSS</span>
+            <span class="badge badge-outline">JavaScript</span>
+            <span class="badge badge-outline">Tailwind</span>
+            <span class="badge badge-outline">React</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJETOS -->
+    <section id="projetos" class="bg-base-100 py-20">
+      <div class="mx-auto max-w-6xl px-4">
+        <div class="mb-10">
+          <p class="text-sm font-semibold uppercase tracking-widest text-primary">Projetos</p>
+          <h2 class="mt-2 text-3xl font-bold sm:text-4xl">Alguns trabalhos</h2>
+        </div>
+
+        <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          <article class="card bg-base-200 shadow-md transition hover:-translate-y-1 hover:shadow-xl">
+            <div class="card-body">
+              <span class="badge badge-primary badge-sm">Web</span>
+              <h3 class="card-title">TecBoard</h3>
+              <p>
+                Interface desenvolvida para praticar componentização e organização
+                de conteúdo em React.
+              </p>
+              <div class="card-actions justify-end">
+                <a href="#" class="btn btn-primary btn-sm">Ver projeto</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card bg-base-200 shadow-md transition hover:-translate-y-1 hover:shadow-xl">
+            <div class="card-body">
+              <span class="badge badge-secondary badge-sm">Design</span>
+              <h3 class="card-title">Vesteen</h3>
+              <p>
+                Projeto de uma loja de roupas com foco em identidade, organização
+                e experiência do usuário.
+              </p>
+              <div class="card-actions justify-end">
+                <a href="#" class="btn btn-outline btn-sm">Ver projeto</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card bg-base-200 shadow-md transition hover:-translate-y-1 hover:shadow-xl">
+            <div class="card-body">
+              <span class="badge badge-accent badge-sm">UI</span>
+              <h3 class="card-title">Página pessoal</h3>
+              <p>
+                Página responsiva construída com Tailwind CSS e DaisyUI para
+                apresentar perfil, habilidades e projetos.
+              </p>
+              <div class="card-actions justify-end">
+                <a href="#" class="btn btn-primary btn-sm">Ver projeto</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTATO -->
+    <section id="contato" class="mx-auto max-w-6xl px-4 py-20">
+      <div class="grid gap-10 lg:grid-cols-2">
+        <div>
+          <p class="text-sm font-semibold uppercase tracking-widest text-primary">Contato</p>
+          <h2 class="mt-2 text-3xl font-bold sm:text-4xl">Vamos conversar?</h2>
+          <p class="mt-4 max-w-xl text-lg opacity-80">
+            Use o formulário ao lado para deixar uma mensagem. Nesta atividade,
+            o formulário é apenas visual e não envia dados.
+          </p>
+
+          <div class="alert alert-info mt-6 max-w-xl">
+            <span>Estou aberto a projetos, estudos e novas ideias na área de tecnologia.</span>
+          </div>
+        </div>
+
+        <form class="card bg-base-100 shadow-xl">
+          <div class="card-body">
+            <label class="form-control w-full">
+              <span class="label-text mb-2 font-medium">Nome</span>
+              <input
+                type="text"
+                placeholder="Digite seu nome"
+                class="input input-bordered w-full"
+              />
+            </label>
+
+            <label class="form-control mt-4 w-full">
+              <span class="label-text mb-2 font-medium">E-mail</span>
+              <input
+                type="email"
+                placeholder="voce@exemplo.com"
+                class="input input-bordered w-full"
+              />
+            </label>
+
+            <label class="form-control mt-4 w-full">
+              <span class="label-text mb-2 font-medium">Mensagem</span>
+              <textarea
+                class="textarea textarea-bordered min-h-28 w-full"
+                placeholder="Escreva sua mensagem"
+              ></textarea>
+            </label>
+
+            <div class="card-actions mt-4 justify-end">
+              <button type="button" class="btn btn-primary">Enviar mensagem</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer footer-center bg-base-300 p-8 text-base-content">
+    <aside>
+      <p>© 2026 Micaías Cruz — Página desenvolvida com Tailwind CSS e DaisyUI.</p>
+    </aside>
+  </footer>
+</body>
 </html>
