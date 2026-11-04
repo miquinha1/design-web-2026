@@ -1,100 +1,129 @@
-# Repositório da turma de Desing Web 2026
+# Catálogo de Oficinas Vue.js
 
+Atividade prática da terceira semana de Vue.js.
 
-## 4ª Semana
+## Objetivo
 
-### Passo 1 – Criar a branch da atividade
-Crie uma branch da atividade. 
-```
-git checkout -b atividade-1
-```
-### Passo 2 – Editar o arquivo index.html
-Substitua o conteúdo do <body> pelo código abaixo (ou personalize):
+Construir um **catálogo dinâmico de oficinas** usando **apenas Vue.js** via CDN. O usuário poderá adicionar oficinas, marcar favoritas, excluir itens e filtrar a lista.
 
-```
-<div class="max-w-sm bg-white rounded-lg shadow-lg p-6 text-center">
-  <img src="https://picsum.photos/seed/1/100" alt="Foto de perfil" class="w-24 h-24 rounded-full mx-auto mb-4">
-  <h2 class="text-2xl font-bold text-gray-800">Seu Nome</h2>
-  <p class="text-gray-600 mt-2">Desenvolvedor Web em aprendizado</p>
-  <button class="mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-    Seguir
-  </button>
-</div>
-```
+Nesta atividade, você vai trabalhar com **listas** (`v-for`), **identificação de itens** (`:key`), **eventos** (`@click` e `@submit.prevent`), **classes dinâmicas** (`:class`), **arrays**, **métodos** e uma propriedade **computada** (`computed`).
 
-## Passo 3 – Commit e push
-```
+**Toda a estrutura visual e o HTML com Vue já estão prontos.** Você só precisa implementar **3 métodos e 1 propriedade computada** para completar as funcionalidades do catálogo.
+
+**Já está pronto:**
+
+- Todo o HTML (campo para nova oficina, botões, filtros e lista)
+- Todo o visual em Tailwind CSS + DaisyUI
+- O `v-model` que liga o campo de texto ao estado
+- Os eventos: `@submit.prevent` para adicionar, `@click` para favoritar e excluir
+- O `v-for` que monta a lista e o `:key` que identifica cada oficina
+- As condições `v-if`/`v-else` do estado vazio e do aviso **Favorita**
+- O `:class` que destaca os filtros e altera o botão **Favoritar**
+- A estrutura `Vue.createApp({...}).mount('#app')`
+- O `data()` com três oficinas iniciais e os demais dados necessários
+- O método `limparCampo()` completo como exemplo
+- O `computed` com um retorno provisório para a lista aparecer antes do TODO 4
+
+**Falta fazer:**
+
+3 métodos e 1 propriedade computada dentro do `<script>`:
+
+| TODO       | Método / computed                 | Funcionalidade                         |
+| ---------- | --------------------------------- | -------------------------------------- |
+| **TODO 1** | `adicionarOficina()`              | Adiciona uma oficina ao array          |
+| **TODO 2** | `alternarFavorito(id)`            | Marca ou desmarca uma oficina favorita |
+| **TODO 3** | `removerOficina(id)`              | Exclui a oficina selecionada           |
+| **TODO 4** | `oficinasVisiveis()` (`computed`) | Mostra todas ou apenas as favoritas    |
+
+Abra o `index.html` e siga os comentários `TODO` dentro do `<script>`. **Não modifique o HTML nem o `data()`**: trabalhe somente nos TODOs indicados.
+
+### TODO 1 — `adicionarOficina()`
+
+Recebe o texto digitado em `novaOficina` e adiciona um novo objeto à lista `oficinas`.
+
+**Regras:**
+1. Crie `const titulo = this.novaOficina.trim()`.
+2. Se `titulo === ''`, use `return` (não adicione oficina vazia).
+3. Use `this.oficinas.push(...)` para adicionar um objeto com `id: this.proximoId`, `titulo: titulo` e `favorita: false`.
+4. Aumente `this.proximoId` em 1 para que a próxima oficina tenha outro identificador.
+5. Chame `this.limparCampo()`.
+
+**Exemplos:**
+- Digitar `Robótica` e clicar em **Adicionar**, aparece mais uma oficina.
+- Tentar adicionar um campo vazio, a lista não deve mudar.
+
+**Após concluir, faça um commit (sem push):**
+
+```bash
 git add index.html
-git commit -m "adiciona card de perfil estilizado com Tailwind"
-git push origin atividade-1
+git commit -m "feat: adiciona oficinas a lista"
 ```
 
-### Passo 4 – Enviar o link no Google Sala de Aula
-- No GitHub, vá até seu repositório fork.
-- No seletor de branches, escolha atividade-1.
-- Copie a URL (ex: https://github.com/SEU_USUARIO/turma-design-web/tree/atividade-1).
-- Cole esse link no campo de entrega da tarefa.
+### TODO 2 — `alternarFavorito(id)`
+
+Deve ser chamado quando o usuário clicar no botão **Favoritar**, de uma oficina.
+
+**Regras:**
+1. Procure a oficina com `this.oficinas.find(item => item.id === id)` e guarde o resultado em uma variável `oficina`.
+2. Se a oficina não existir, use `return`.
+3. Inverta o valor de `oficina.favorita` usando `!`.
+4. Observe o texto do botão, a classe visual e o aviso **Favorita**: o HTML já reage à mudança de estado.
 
 
-## 3ª Semana 
+**Após concluir, faça um commit (sem push):**
 
-Fizemos algumas atividades, focados no Github. Criamos e clonamos nosso repositório principal.
-
-### Passo 1 – Fork do repositório
-
-- Acesse: https://github.com/professor/turma-design-web
-- Clique no botão Fork (canto superior direito). Isso criará uma cópia na sua conta. 
-
-### Passo 2 – Clonar o fork
-Abra o terminal (Git Bash, PowerShell ou terminal integrado do VS Code) e execute
-
-```
-git clone https://github.com/SEU_USUARIO/turma-design-web.git
-cd turma-design-web
+```bash
+git add index.html
+git commit -m "feat: alterna oficinas favoritas"
 ```
 
+### TODO 3 — `removerOficina(id)`
+
+É chamado ao clicar em **Excluir** no item correspondente.
+
+**Regras:**
+1. Use `this.oficinas.filter(...)` para produzir um array apenas com itens cujo `item.id !== id`.
+2. Atribua esse novo array a `this.oficinas`.
+3. Observe a atualização da lista sem manipular o HTML manualmente.
 
 
-Arquivo de codigo compartilhado
+**Após concluir e testar, faça um commit (sem push):**
 
-## 2ª Semana 
+```bash
+git add index.html
+git commit -m "feat(aula-46): remove oficina pelo id"
+```
 
-### Cartão de Apresentação – Bruno Nakamura
+### TODO 4 — `oficinasVisiveis()` (`computed`)
 
-Projeto didático para ensinar a integração entre **HTML semântico** e **SCSS** (pré-processador CSS).
+É uma propriedade computada: produz uma lista a partir de `oficinas` e do filtro atual. O HTML já utiliza `oficinasVisiveis` no `v-for` e no contador.
 
-## Estrutura
+**Regras:**
+1. Dentro de `computed`, localize `oficinasVisiveis()`.
+2. **Substitua** o retorno provisório `return this.oficinas;` por uma condição `if`.
+3. Se `this.filtro === 'favoritas'`, retorne `this.oficinas.filter(oficina => oficina.favorita)`.
+4. Caso contrário, retorne `this.oficinas`.
 
-projeto/
+**Após concluir, faça um commit (sem push):**
 
-├── index.html 
+```bash
+git add index.html
+git commit -m "feat(aula-46): filtra oficinas favoritas"
+```
 
-├── scss/
+### Referência: o `limparCampo()` já está pronto
 
-└── style.scss 
+Use como exemplo de como acessar o estado com `this`:
 
-└── css/
+```js
+limparCampo() {
+  this.novaOficina = '';
+}
+```
 
-└── style.css # Arquivo gerado pelo SCSS (não edite jamais ou vai perder tudo para sempre)
+
+## Entrega no GSA
+
+Crie uma branch para a atividade. **Após cada TODO concluído e testado, faça o commit local correspondente**. Não precisa dar `push` a cada TODO. Faça um único `push` ao finalizar.
 
 
-## Como usar
-
-1. **Clone ou baixe** os arquivos.
-2. **Compile o SCSS** para CSS:
-   - Com o Sass instalado: `sass scss/style.scss css/style.css --watch`
-   - Ou use a extensão "Live Sass Compiler" no VS Code.
-3. **Abra** o `index.html` no navegador.
-
-## Personalize
-
-- **Cores**: altere as variáveis no início do `style.scss` (`$color-primary`, `$color-secondary`, etc.).
-- **Imagem**: substitua a URL placeholder (`https://via.placeholder.com/...`) pelo seu próprio avatar.
-- **Conteúdo**: edite o HTML para mudar texto, tecnologias e links.
-
-## Boas práticas aplicadas
-
-- Tags HTML semânticas (`header`, `main`, `section`, `footer`)
-- Atributos de acessibilidade (`role`, `aria-label`, `focus-visible`)
-- Responsividade com mixins (mobile-first)
-- Código SCSS organizado com variáveis e aninhamento
